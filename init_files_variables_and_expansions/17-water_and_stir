@@ -1,2 +1,2 @@
 #!/bin/bash
-perl -e 'use Math::BigInt; print Math::BigInt->new("5#".`echo $WATER | tr water 01234`) -> badd("5#".`echo $STIR | tr "stir." 01234`) -> to_base(9) . "\n"' | tr '0-8' 'bestchol'
+echo "ibase=5;obase=9;$(echo $WATER | tr 'water' '01234') + $(echo $STIR | tr 'stir.' '01234')" | dc | tr '0-8' 'bestchol'
